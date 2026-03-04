@@ -70,7 +70,7 @@ stringData:
           user: "massivedecks",
           database: "massivedecks",
           // Must match the postgres-password value in secrets.yaml.
-          password: "CHANGE ME",
+          password: "fa1cb08e89d6374f2b932f8709704857ec1b1c187a9f5b381ca0d80e8ad7ef74",
           keepAlive: false,
         },
         abandonedTime: "PT15M",
@@ -85,7 +85,7 @@ stringData:
           user: "massivedecks",
           database: "massivedecks",
           // Must match the postgres-password value in secrets.yaml.
-          password: "CHANGE ME",
+          password: "fa1cb08e89d6374f2b932f8709704857ec1b1c187a9f5b381ca0d80e8ad7ef74",
           keepAlive: false,
         },
         checkAfter: "PT5M",
