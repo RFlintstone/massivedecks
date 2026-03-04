@@ -26,12 +26,13 @@ This directory contains Kubernetes manifests for deploying Massive Decks. It dep
      environment variable; you do not need to set it inside the config file.
    - Adjust any other settings as needed (deck sources, timeouts, etc.).
 
-3. **Set your hostname** — open `ingress.yaml` and replace `massivedecks.example.com` with
-   your actual domain name. Ensure that DNS for this domain points to your cluster's ingress IP.
+3. **Set your hostname** — the ingress is already configured for `cah.rubenflinterman.com`.
+   Ensure that DNS for this domain points to your cluster's ingress IP.
 
 4. **Apply all manifests**:
    ```sh
    kubectl apply -f namespace.yaml
+   kubectl apply -f cert.yaml
    kubectl apply -f secrets.yaml
    kubectl apply -f postgres.yaml
    kubectl apply -f server.yaml
@@ -45,27 +46,17 @@ This directory contains Kubernetes manifests for deploying Massive Decks. It dep
 
 5. **Verify the rollout**:
    ```sh
-   kubectl -n massivedecks get pods
-   kubectl -n massivedecks get ingress
+   kubectl -n massivedecks-rubenflinterman-com get pods
+   kubectl -n massivedecks-rubenflinterman-com get ingressroutes
    ```
 
 ## Notes
 
 ### TLS / HTTPS
 
-To add HTTPS, configure a `tls` section in `ingress.yaml` with a certificate secret, or use a
-Traefik middleware and a certificate resolver such as Let's Encrypt. For example:
-
-```yaml
-spec:
-  ingressClassName: traefik
-  tls:
-    - hosts:
-        - massivedecks.example.com
-      secretName: massivedecks-tls
-  rules:
-    ...
-```
+TLS is managed by cert-manager via `cert.yaml`. A `Certificate` resource requests a
+Let's Encrypt certificate for `cah.rubenflinterman.com`, storing it in the
+`cah-rubenflinterman-com-tls` secret referenced by `ingress.yaml`.
 
 ### Image versions
 
@@ -97,22 +88,5 @@ cache: {
 
 ### Traefik IngressRoute (CRD)
 
-If you prefer to use the Traefik-native `IngressRoute` CRD instead of the standard Ingress
-resource, replace `ingress.yaml` with a manifest like:
-
-```yaml
-apiVersion: traefik.io/v1alpha1
-kind: IngressRoute
-metadata:
-  name: massivedecks
-  namespace: massivedecks
-spec:
-  entryPoints:
-    - web
-  routes:
-    - match: Host(`massivedecks.example.com`)
-      kind: Rule
-      services:
-        - name: client
-          port: 8080
-```
+The `ingress.yaml` already uses the Traefik-native `IngressRoute` CRD and routes traffic
+for `cah.rubenflinterman.com` to the `client` service on port 8080.
