@@ -136,6 +136,12 @@ spec:
             - name: config
               mountPath: /md/config.json5
               subPath: config.json5
+          livenessProbe:
+            httpGet:
+              path: /api/ping
+              port: 8081
+            initialDelaySeconds: 15
+            periodSeconds: 10
           readinessProbe:
             httpGet:
               path: /api/ping
