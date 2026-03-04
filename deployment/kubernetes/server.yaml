@@ -117,8 +117,11 @@ spec:
     spec:
       containers:
         - name: server
-          # Pin to a specific version in production for stability.
-          image: ghcr.io/lattyware/massivedecks/server:latest-release
+          # Built and pushed by the publish workflow in .github/workflows/publish.yml.
+          # Pin to a specific SHA tag (e.g. ghcr.io/rflintstone/massivedecks/server:<sha>)
+          # for production stability, or use 'latest' for rapid deployments.
+          image: ghcr.io/rflintstone/massivedecks/server:latest
+          imagePullPolicy: Always
           env:
             - name: NODE_ENV
               value: production

@@ -69,9 +69,14 @@ spec:
 
 ### Image versions
 
-The manifests reference `latest-release` image tags. For production stability, pin both the
-`server` and `client` images to the **same** exact version tag or commit digest, and update
-them together.
+The manifests use `ghcr.io/rflintstone/massivedecks/{server,client}:latest` and
+`imagePullPolicy: Always`. These images are built and pushed automatically by the
+[publish workflow](../../.github/workflows/publish.yml) whenever a commit is pushed to
+`main` or a `v*.*.*` tag is created.
+
+For production stability, pin both the `server` and `client` images to the **same** exact
+commit SHA tag (e.g. `ghcr.io/rflintstone/massivedecks/server:abc1234`) and update them
+together when you want to upgrade.
 
 ### In-memory storage
 

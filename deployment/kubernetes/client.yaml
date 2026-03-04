@@ -98,8 +98,11 @@ spec:
     spec:
       containers:
         - name: client
-          # Pin to the same version tag as the server image in production.
-          image: ghcr.io/lattyware/massivedecks/client:latest-release
+          # Built and pushed by the publish workflow in .github/workflows/publish.yml.
+          # Pin to a specific SHA tag (e.g. ghcr.io/rflintstone/massivedecks/client:<sha>)
+          # for production stability, or use 'latest' for rapid deployments.
+          image: ghcr.io/rflintstone/massivedecks/client:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           volumeMounts:
