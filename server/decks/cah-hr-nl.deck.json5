@@ -1,3 +1,5 @@
+// Cards Against Humanity, https://cardsagainsthumanity.com/
+// Used under a Creative Commons BY-NC-SA 2.0 license, https://creativecommons.org/licenses/by-nc-sa/2.0/
 {
   name: "Cards Against Hogeschool Rotterdam: De Burn-out Editie",
   language: "nl",
@@ -5,95 +7,133 @@
 
   calls: [
     // --- De Digitale Hel ---
-    [["Brightspace melding: Je cijfer voor Project 1 is een ", {}, "."]],
-    [["CodeGrade heeft mijn code afgekeurd vanwege ", {}, "."]],
-    [["Ik heb mijn deadline gemist omdat ik te druk was met ", {}, "."]],
-    
-    // De aangepaste Proctorio kaart
-    [["HR markeerde mijn tentamen als fraude omdat de AI ", {}, " zag in mijn slaapkamer."]],
-    [["Tijdens de 'Room Scan' voor mijn examen liet ik per ongeluk ", {}, " zien aan mijn docent."]],
-    
-    // --- Campus Leven ---
-    [["Wat ligt er nou echt verborgen op de 5e verdieping van Wijnhaven?"], [{ transform: "Capitalize" }, "."]],
-    [["De liften op Museumpark worden tegenwoordig gebruikt voor ", {}, "."]],
-    [["Mijn studieloopbaancoach raadde me aan om ", {}, " te proberen voor mijn BSA-norm."]],
-    [["Waarom staat de Erasmusbrug nou weer open?"], [{ transform: "Capitalize" }, "."]],
-    [["De MyStart-app crashte alweer door ", {}, "."]],
-    
-    // --- De Echte "Hogeschool" Ervaring ---
-    [["Om te slagen voor het Rotterdam Project, moeten studenten ", {}, " inleveren."]],
-    [["Het enige dat erger is dan een college om 09:00 is ", {}, "."]],
-    [["Ik sta gemiddeld een 4,2 door ", {}, "."]],
-    [["Het nieuwe keuzevak 'Gevorderd Lijden' gaat dit jaar over ", {}, "."]],
-    [["Waarom ruikt het bij de ingang van Wijnhaven naar ", {}, " ?"]],
-    
+    [
+      ["Brightspace-melding: Je cijfer voor Project 1 is een ", {}, "."]
+    ],
+    [
+      ["CodeGrade heeft mijn code afgekeurd vanwege ", {}, "."]
+    ],
+    [
+      ["Ik heb mijn deadline gemist omdat ik te druk was met ", {}, "."]
+    ],
+
+    // Proctorio
+    [
+      ["HR markeerde mijn tentamen als fraude omdat de AI ", {}, " zag in mijn slaapkamer."]
+    ],
+    [
+      ["Tijdens de ‘Room Scan’ voor mijn examen liet ik per ongeluk ", {}, " zien aan mijn docent."]
+    ],
+
+    // --- Campusleven ---
+    [
+      ["Wat ligt er nou echt verborgen op de 5e verdieping van Wijnhaven?"],
+      [{ transform: "Capitalize" }, "."]
+    ],
+    [
+      ["De liften op Museumpark worden tegenwoordig gebruikt voor ", {}, "."]
+    ],
+    [
+      ["Mijn studieloopbaancoach raadde me aan om ", {}, " te proberen voor mijn BSA-norm."]
+    ],
+    [
+      ["Waarom staat de Erasmusbrug nou weer open?"],
+      [{ transform: "Capitalize" }, "."]
+    ],
+    [
+      ["De MyStart-app crashte alweer door ", {}, "."]
+    ],
+
+    // --- De Echte Hogeschool-ervaring ---
+    [
+      ["Om te slagen voor het Rotterdam Project moeten studenten ", {}, " inleveren."]
+    ],
+    [
+      ["Het enige dat erger is dan een college om 09:00 is ", {}, "."]
+    ],
+    [
+      ["Ik sta gemiddeld een 4,2 door ", {}, "."]
+    ],
+    [
+      ["Het nieuwe keuzevak ‘Gevorderd Lijden’ gaat dit jaar over ", {}, "."]
+    ],
+    [
+      ["Waarom ruikt het bij de ingang van Wijnhaven naar ", {}, "?"]
+    ],
+
     // --- Stages & Toekomst ---
-    [["Mijn stagebegeleider heeft me ontslagen vanwege ", {}, "."]],
-    [["In plaats van een diploma krijg je bij de diploma-uitreiking nu ", {}, "."]],
-    [["De enige manier om een baan te krijgen in de Haven is via ", {}, "."]],
-    
+    [
+      ["Mijn stagebegeleider heeft me ontslagen vanwege ", {}, "."]
+    ],
+    [
+      ["In plaats van een diploma krijg je bij de diploma-uitreiking nu ", {}, "."]
+    ],
+    [
+      ["De enige manier om een baan te krijgen in de haven is via ", {}, "."]
+    ],
+
     // --- Pick 2 Specials ---
     [
       ["Eerst was het ", {}, ", toen kwam ", {}, ". Dat was voor mij het moment om te stoppen."]
     ],
     [
-      ["Waar staat de 'Business' in Rotterdam Business School eigenlijk voor?"],
-      [{ transform: "Capitalize" }, " en ", {}]
+      ["Waar staat de ‘Business’ in Rotterdam Business School eigenlijk voor?"],
+      [{ transform: "Capitalize" }, " en ", { transform: "Capitalize" }, "."]
     ],
     [
-      ["Ik ben gezakt voor mijn Assessment omdat ik ", {}, " niet kon koppelen aan ", {}, "."]
+      ["Ik ben gezakt voor mijn assessment omdat ik ", {}, " niet kon koppelen aan ", {}, "."]
     ]
   ],
 
   responses: [
     // --- Systemen & Techniek ---
-    "een CodeGrade 'Internal Server Error'",
+    "een CodeGrade ‘Internal Server Error’",
     "vergeten je in te schrijven in Osiris",
     "een Brightspace-aankondiging om 23:59",
     "ChatGPT gebruiken voor je reflectieverslag",
     "Eduroam die wegvalt tijdens je toets",
-    "een 'voldoende' die voelt als een 5,45",
+    "een ‘voldoende’ die voelt als een 5,45",
     "15 tabbladen met StackOverflow en paniek",
     "gehurkt je kamer scannen voor Proctorio",
     "een webcam die precies op het verkeerde moment crasht",
     "jezelf per ongeluk muten tijdens een presentatie",
-    
+
     // --- Mensen & Typetjes ---
     "een docent die zijn slides sinds 2012 niet heeft aangepast",
     "de internationale student die je nog nooit hebt gezien",
-    "een groepsgenoot die alleen de layout aanpast",
+    "een groepsgenoot die alleen de lay-out aanpast",
     "de beveiliger bij Wijnhaven 107",
     "een studieloopbaancoach die zelf ook de weg kwijt is",
     "die ene gast van de servicedesk die je haat",
-    "een gastspreker die alleen over zijn eigen falende startup lult",
-    
+    "een gastspreker die alleen over zijn eigen falende startup praat",
+
     // --- Locaties & Logistiek ---
     "de geur van de Spar op Museumpark",
     "20 minuten wachten op de lift bij Wijnhaven",
-    "de absolute teringzooi in de kantine van Kralingse Zoom",
+    "de absolute chaos in de kantine van Kralingse Zoom",
     "huilen in een stiltecoupé op de 4e",
     "foutparkeren bij RDM",
-    "de 'Walk of Shame' vanaf Rotterdam Centraal",
-    "een overvolle Metro lijn C",
+    "de walk of shame vanaf Rotterdam Centraal",
+    "een overvolle metrolijn C",
     "met de trap naar de 6e verdieping gaan en bijna doodgaan",
-    
+
     // --- Studentenleed & HR Lore ---
     "een negatief bindend studieadvies",
-    "alweer een verplichte workshop 'Samenwerken'",
+    "alweer een verplichte workshop ‘Samenwerken’",
     "2000 euro collegegeld betalen voor een YouTube-tutorial",
     "gratis koffie die smaakt naar batterijzuur",
     "een stagevergoeding van 0 euro",
-    "de 0,1 punt die je tekort kwam om te slagen",
+    "de 0,1 punt die je tekortkwam om te slagen",
     "een STAR-reflectie die voor 90% uit leugens bestaat",
     "de realisatie dat je de verkeerde studie hebt gekozen",
-    "doen alsof je ziek bent voor een peer-feedback sessie",
-    "een LinkedIn-post over je 'super leerzame' kutstage",
+    "doen alsof je ziek bent voor een peerfeedbacksessie",
+    "een LinkedIn-post over je ‘super leerzame’ stage",
     "Hogeschool Leiden",
-    "een Kapsalon van Jaffa om 03:00 's nachts",
+    "een kapsalon van Jaffa om 03:00 ’s nachts",
     "jezelf moed indrinken bij de Locus Publicus",
     "huilen bij de studentendecaan",
     "een herkansing van een herkansing",
     "een stapel ongewassen onderbroeken in de hoek van je kamer",
     "je moeder die de kamer binnenkomt met een bordje fruit tijdens je tentamen"
-  ],
+  ]
 }
