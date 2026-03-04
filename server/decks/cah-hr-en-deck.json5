@@ -1,0 +1,95 @@
+{
+  name: "Cards Against Hogeschool Rotterdam: Extended Burn Edition",
+  language: "nl",
+  author: "A Stressed Student",
+
+  calls: [
+    // --- The Digital Struggle ---
+    [["Brightspace notification: Your grade for Project 1 is ", {}, "."]],
+    [["CodeGrade rejected my code because of ", {}, "."]],
+    [["I didn’t turn in my assignment because I was too busy with ", {}, "."]],
+    [["The Proctorio room scan failed because the AI detected ", {}, " in the background."]],
+    
+    // --- Campus Life & Logistics ---
+    [["What is actually hidden on the 5th floor of Wijnhaven?"], [{ transform: "Capitalize" }, "."]],
+    [["The elevators at Museumpark are currently being used for ", {}, "."]],
+    [["My study coach recommended that I try ", {}, " to improve my BSA."]],
+    [["Why is the bridge to RDM open right now?"], [{ transform: "Capitalize" }, "."]],
+    [["The most used feature of the HR MyStart app is ", {}, "."]],
+    
+    // --- The "Hogeschool" Experience ---
+    [["In order to pass the Rotterdam Project, students must provide ", {}, "."]],
+    [["The only thing worse than a 9:00 AM lecture is ", {}, "."]],
+    [["I have a 0.2 GPA because of ", {}, "."]],
+    [["The new elective 'Advanced Suffering' mainly focuses on ", {}, "."]],
+    [["Wait, why is there ", {}, " in the WD canteen?"]],
+    
+    // --- Internships & Future ---
+    [["My internship supervisor fired me for ", {}, "."]],
+    [["Instead of a diploma, HR is now handing out ", {}, " at graduation."]],
+    [["The only way to get a job at the Havenbedrijf is through ", {}, "."]],
+    
+    // --- The "Pick 2" Specials ---
+    [
+      ["First it was ", {}, ", then it was ", {}, ". That is why I am dropping out."]
+    ],
+    [
+      ["What does the 'Business' in Rotterdam Business School stand for?"],
+      [{ transform: "Capitalize" }, " and ", {}]
+    ],
+    [
+      ["I failed my Professional Skills assessment because I couldn't explain how ", {}, " relates to ", {}, "."]
+    ]
+  ],
+
+  responses: [
+    // --- Platforms & Tech ---
+    "a CodeGrade 'Internal Server Error'",
+    "forgetting to enroll in Osiris",
+    "a Brightspace announcement at 11:59 PM",
+    "using ChatGPT for a 'Reflectieverslag'",
+    "Eduroam disconnecting right before a deadline",
+    "a 'Voldoende' that feels like a 'Onvoldoende'",
+    "15 Chrome tabs of StackOverflow",
+    "failing a plagiarism check because of your own name",
+    
+    // --- People & Archetypes ---
+    "a teacher who hasn't updated their slides since 2012",
+    "the international student who never shows up",
+    "a group mate who only contributes 'Fixed the layout'",
+    "the security guard at Wijnhaven 107",
+    "a study coach who is more lost than you are",
+    "the guy at the service desk who clearly hates his life",
+    "a guest lecturer who just talks about their failed startup",
+    
+    // --- Locations & Campus ---
+    "the smell of the Spar at Museumpark",
+    "waiting 20 minutes for the Wijnhaven elevator",
+    "the absolute chaos of the Kralingse Zoom canteen",
+    "crying in a silent study pod",
+    "illegal parking at RDM",
+    "the walk of shame from Rotterdam Centraal",
+    "the vending machine that steals your last €2",
+    "taking the stairs to the 6th floor and dying",
+    
+    // --- Student Pain & HR Lore ---
+    "a negative BSA",
+    "another mandatory 'Samenwerken' workshop",
+    "paying €2000 tuition for a YouTube tutorial",
+    "free coffee that tastes like battery acid",
+    "an internship that only pays in 'experience'",
+    "the 0.1 point you needed to pass",
+    "a 4-hour commute from Zeeland",
+    "the 'Grenzeloos Werken' module",
+    "buying a €100 textbook and never opening it",
+    "Proctorio watching you cry during an exam",
+    "an 'Integrale Toets' designed by Satan",
+    "a STAR-method reflection that is 90% lies",
+    "the realization that you chose the wrong major",
+    "pretending to be sick to avoid a peer feedback session",
+    "the 'Studeerruimte' that is actually just a hallway",
+    "a LinkedIn post about how much you love your 'uitdagende' internship",
+    "Hogeschool Leiden", // The ultimate insult
+    "a Kapsalon at 3:00 AM"
+  ],
+}
