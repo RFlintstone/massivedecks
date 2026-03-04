@@ -80,6 +80,8 @@ async function main(): Promise<void> {
     }),
   );
 
+  app.get("/api/ping", (_req, res) => res.sendStatus(HttpStatus.OK));
+
   app.get("/api/version", async (req, res) => res.json(config.version));
 
   app.get("/api/config", async (req, res) =>
