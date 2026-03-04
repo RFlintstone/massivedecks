@@ -23,8 +23,9 @@ services:
     # https://hub.docker.com/_/postgres
     environment:
       - POSTGRES_USER=massivedecks
-      # This should be changed to a secret value, matched to the config.
-      - POSTGRES_PASSWORD=CHANGE ME
+      # This value must match the password field in config.json5.
+      - POSTGRES_PASSWORD=fa1cb08e89d6374f2b932f8709704857ec1b1c187a9f5b381ca0d80e8ad7ef74
+      - PGDATA=/var/lib/postgresql/data/pgdata
     networks:
       - internal
     volumes:
