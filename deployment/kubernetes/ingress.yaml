@@ -1,0 +1,18 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: massivedecks-ing-traefik
+  namespace: massivedecks-rubenflinterman-com
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: (Host(`cah.rubenflinterman.com`) || Host(`www.cah.rubenflinterman.com`)) && PathPrefix(`/`)
+      kind: Rule
+      services:
+        - name: client
+          port: 8080
+  tls:
+    secretName: cah-rubenflinterman-com-tls
