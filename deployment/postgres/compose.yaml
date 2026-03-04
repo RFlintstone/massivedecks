@@ -25,6 +25,7 @@ services:
       - POSTGRES_USER=massivedecks
       # This should be changed to a secret value, matched to the config.
       - POSTGRES_PASSWORD=CHANGE ME
+      - PGDATA=/var/lib/postgresql/data/pgdata
     networks:
       - internal
     volumes:
