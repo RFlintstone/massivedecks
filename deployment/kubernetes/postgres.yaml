@@ -1,8 +1,20 @@
 apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+  namespace: massivedecks-rubenflinterman-com
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
 kind: Service
 metadata:
   name: storage
-  namespace: massivedecks
+  namespace: massivedecks-rubenflinterman-com
 spec:
   selector:
     app: storage
@@ -15,7 +27,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: storage
-  namespace: massivedecks
+  namespace: massivedecks-rubenflinterman-com
 spec:
   serviceName: storage
   replicas: 1
@@ -50,11 +62,7 @@ spec:
               command: ["pg_isready", "-U", "massivedecks"]
             initialDelaySeconds: 5
             periodSeconds: 10
-  volumeClaimTemplates:
-    - metadata:
-        name: storage-data
-      spec:
-        accessModes: ["ReadWriteOnce"]
-        resources:
-          requests:
-            storage: 1Gi
+      volumes:
+        - name: storage-data
+          persistentVolumeClaim:
+            claimName: postgres-pvc

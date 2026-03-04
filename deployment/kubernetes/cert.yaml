@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: cah-rubenflinterman-com-tls
+  namespace: massivedecks-rubenflinterman-com
+spec:
+  dnsNames:
+    - cah.rubenflinterman.com
+    - www.cah.rubenflinterman.com
+  secretName: cah-rubenflinterman-com-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer

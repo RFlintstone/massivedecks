@@ -1,21 +1,18 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
 metadata:
-  name: massivedecks
-  namespace: massivedecks
+  name: massivedecks-ing-traefik
+  namespace: massivedecks-rubenflinterman-com
   annotations:
-    # Enable WebSocket support required for the game API.
-    traefik.ingress.kubernetes.io/router.entrypoints: web
+    kubernetes.io/ingress.class: traefik
 spec:
-  ingressClassName: traefik
-  rules:
-    - host: massivedecks.example.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: client
-                port:
-                  number: 8080
+  entryPoints:
+    - websecure
+  routes:
+    - match: (Host(`cah.rubenflinterman.com`) || Host(`www.cah.rubenflinterman.com`)) && PathPrefix(`/`)
+      kind: Rule
+      services:
+        - name: client
+          port: 8080
+  tls:
+    secretName: cah-rubenflinterman-com-tls
